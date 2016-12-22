@@ -1,5 +1,4 @@
-version: '2'
-catalog:
+.catalog:
   name: Initial version # Name of the versioned template of the Catalog Entry
   version: 0.1 # Version of the versioned template of the Catalog Entry
   description: installs wordpress with mysql and phpmyadmin # Description of the versioned template of the Catalog Entry
