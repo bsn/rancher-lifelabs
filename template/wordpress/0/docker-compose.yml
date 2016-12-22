@@ -1,0 +1,22 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+    volumes:
+    - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "F8dk7c6h14S"
+  phpmyadmin:
+    image: docker pull phpmyadmin/phpmyadmin
+    environment: 
+      MYSQL_ROOT_PASSWORD: "F8dk7c6h14S"
+    links:
+      - mysql
+  version: '2'
+  services:
+    wordpress_lifeisgoodlabs:
+      image: wordpress:php7.0-fpm
+      links:
+        - mysql:db
+      volumes:
+        lifeisgoodlabs_data:/usr/src/wordpress
