@@ -1,3 +1,4 @@
+version: '2'
 sentry-postgres:
   environment:
     POSTGRES_USER: sentry
@@ -10,6 +11,8 @@ sentry-postgres:
   log_opt: {}
   image: postgres:9.5-alpine
   stdin_open: true
+  volumes:
+  - sentry_postgres_data:/data/postgres/data
 sentry-cron:
   environment:
     SENTRY_EMAIL_HOST: ${sentry_email_host}
