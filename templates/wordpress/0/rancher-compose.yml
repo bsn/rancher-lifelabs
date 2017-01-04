@@ -6,7 +6,7 @@
   maximum_rancher_version: # The maximum version of Rancher that supports the template, v1.0.1 and 1.0.1 are acceptable inputs
   upgrade_from: # The previous versions that this template can be upgraded from
   questions: #Used to request user input for configuration options
-  - variable: mysql_root_passowrd # A single word that is used to pair the question and answer.
+  - variable: mysql_root_password # A single word that is used to pair the question and answer.
       label: Mysql Root Password # The "question" to be answered.
       description: |
       type: password
