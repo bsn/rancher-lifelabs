@@ -8,7 +8,7 @@ sentry-postgres:
     io.rancher.container.pull_image: always
   tty: true
   log_opt: {}
-  image: postgres:9.6-alpine
+  image: postgres:9.5-alpine
   stdin_open: true
 sentry-cron:
   environment:
