@@ -4,8 +4,6 @@ sentry-postgres:
     POSTGRES_PASSWORD: secret
     PGDATA: /data/postgres/data
   log_driver: ''
-  volumes:
-    - sentry_postgres: /data/postgres/data
   labels:
     io.rancher.container.pull_image: always
   tty: true
