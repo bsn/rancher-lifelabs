@@ -12,11 +12,9 @@ services:
       MYSQL_ROOT_PASSWORD: "F8dk7c6h14S"
     links:
       - mysql
-  version: '2'
-  services:
-    wordpress_lifeisgoodlabs:
-      image: wordpress:php7.0-fpm
-      links:
-        - mysql:db
-      volumes:
-        lifeisgoodlabs_data:/usr/src/wordpress
+  wordpress_lifeisgoodlabs:
+    image: wordpress:php7.0-fpm
+    links:
+      - mysql:db
+    volumes:
+      lifeisgoodlabs_data:/usr/src/wordpress
