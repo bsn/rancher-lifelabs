@@ -3,7 +3,7 @@ mysql:
   volumes:
   - mysql_data:/var/lib/mysql
   environment:
-    MYSQL_ROOT_PASSWORD: "password"
+    MYSQL_ROOT_PASSWORD: "passw0rd"
 phpmyadmin:
   image: phpmyadmin/phpmyadmin:latest
   log_driver: ''
@@ -13,11 +13,11 @@ phpmyadmin:
   log_opt: {}
   stdin_open: true
   environment:
-    MYSQL_ROOT_PASSWORD: "password"
+    MYSQL_ROOT_PASSWORD: "passw0rd"
   ports:
   - ${wordpress_phpmyadmin_port}:80/tcp
   links:
-  - mysql
+  - mysql:mysql
 wordpress:
   image: wordpress:php7.0
   log_driver: ''
