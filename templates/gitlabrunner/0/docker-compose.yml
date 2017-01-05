@@ -1,0 +1,16 @@
+version: '2'
+gitlab-runner:
+  image: sameersbn/gitlab-ci-multi-runner:1.1.4-6
+  stdin_open: true
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  log_opt: {}
+  environment:
+    CI_SERVER_URL: ${gitlab_runner_ci_url}
+    RUNNER_EXECUTOR: docker
+    RUNNER_TOKEN: ${gitlab_runner_token}
+    RUNNER_DESCRIPTION: ${gitlab_runner_name}
+  volumes:
+  - gitlab_runner_data:/home/gitlab_ci_multi_runner/data

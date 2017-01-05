@@ -1,0 +1,16 @@
+.catalog:
+  name: Gitlab Runner
+  version: 1.1.4
+  questions: #Used to request user input for configuration options
+    - variable: "gitlab_runner_ci_url"
+      type: "string"
+      required: true
+      label: "hostname for gitlab ci"
+    - variable: "gitlab_runner_token"
+      type: "string"
+      label: "gitlab runner token"
+      required: true
+    - variable: "gitlab_runner_name"
+      type: "string"
+      required: true
+      label: "name for this runner"
