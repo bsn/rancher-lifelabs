@@ -7,13 +7,25 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "password"
   phpmyadmin:
-    image: docker pull phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    log_driver: ''
+    labels:
+      io.rancher.container.pull_image: always
+    tty: true
+    log_opt: {}
+    stdin_open: true
     environment:
       MYSQL_ROOT_PASSWORD: "password"
     links:
       - mysql
   wordpress:
     image: wordpress:php7.0-fpm
+    log_driver: ''
+    labels:
+      io.rancher.container.pull_image: always
+    tty: true
+    log_opt: {}
+    stdin_open: true
     links:
       - mysql:db
     volumes:
