@@ -5,16 +5,16 @@ services:
     volumes:
     - mysql_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "F8dk7c6h14S"
+      MYSQL_ROOT_PASSWORD: "password"
   phpmyadmin:
     image: docker pull phpmyadmin/phpmyadmin
-    environment: 
-      MYSQL_ROOT_PASSWORD: "F8dk7c6h14S"
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
     links:
       - mysql
-  wordpress_lifeisgoodlabs:
+  wordpress:
     image: wordpress:php7.0-fpm
     links:
       - mysql:db
     volumes:
-      lifeisgoodlabs_data:/usr/src/wordpress
+      wordpress_data:/usr/src/wordpress
