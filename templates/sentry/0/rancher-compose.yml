@@ -62,3 +62,9 @@
       required: false
       label: "SENTRY_EMAIL_PORT"
       description: "Port of the smtp server. see https://hub.docker.com/_/sentry/ for more info"
+
+    - variable: "sentry_email_use_tls"
+      type: "string"
+      required: false
+      label: "SENTRY_EMAIL_USE_TLS"
+      description: "Port of the smtp server. see https://hub.docker.com/_/sentry/ for more info"

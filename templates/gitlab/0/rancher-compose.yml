@@ -1,0 +1,39 @@
+.catalog:
+  name: Gitlab
+  version: 8.15.0
+  description: # Description of the versioned template of the Catalog Entry
+  uuid: # Unique identifier to be used for upgrades. Please see note.
+  minimum_rancher_version: # The minimum version of Rancher that supports the template
+  questions: #Used to request user input for configuration options
+    - variable: "gitlab_host"
+      type: "string"
+      required: true
+      label: "hostname for gitlab installation"
+    - variable: "gitlab_public_port"
+      type: "int"
+      label: "Public port to use"
+      required: true
+    - variable: "gitlab_secrets_db_key_base"
+      type: "password"
+      required: true
+      label: "secret key for gitlab installation(please save it somewhere)"
+    - variable: "gitlab_ssl_true"
+      type: "boolean"
+      required: false
+      label: "Is gitlab use SSL"
+    - variable: "gitlab_smtp_user"
+      type: "string"
+      required: true
+      label: "Gmail user to send emails from"
+    - variable: "gitlab_smtp_pass"
+      type: "password"
+      required: true
+      label: "Gmail password"
+    - variable: "gitlab_root_email"
+      type: "string"
+      required: true
+      label: "ROOT user email"
+    - variable: "gitlab_root_password"
+      type: "password"
+      required: true
+      label: "ROOT user password"

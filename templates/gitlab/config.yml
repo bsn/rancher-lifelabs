@@ -1,0 +1,6 @@
+name: Gitlab
+description: |
+  github replacement
+version: 8.15.0
+category: git
+projectURL: http://gitlab.com
