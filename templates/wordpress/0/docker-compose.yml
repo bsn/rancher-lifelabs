@@ -15,7 +15,7 @@ phpmyadmin:
   environment:
     MYSQL_ROOT_PASSWORD: "password"
   links:
-    - mysql
+  - mysql
 wordpress:
   image: wordpress:php7.0-fpm
   log_driver: ''
@@ -25,6 +25,6 @@ wordpress:
   log_opt: {}
   stdin_open: true
   links:
-    - mysql:db
+  - mysql:db
   volumes:
-    wordpress_data:/usr/src/wordpress
+  - wordpress_data:/usr/src/wordpress
