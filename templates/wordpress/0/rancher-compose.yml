@@ -3,3 +3,12 @@
   version: 0.1 # Version of the versioned template of the Catalog Entry
   description: installs wordpress with mysql and phpmyadmin # Description of the versioned template of the Catalog Entry
   minimum_rancher_version: 1.2.0
+  questions:
+    - variable: "wordpress_port"
+      type: "int"
+      required: true
+      label: "Wordpress public port"
+    - variable: "wordpress_phpmyadmin_port"
+      type: "int"
+      required: true
+      label: "PHPmyadmin public port"
