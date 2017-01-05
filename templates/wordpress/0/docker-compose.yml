@@ -15,7 +15,7 @@ phpmyadmin:
   environment:
     MYSQL_ROOT_PASSWORD: "password"
   ports:
-  - {$wordpress_phpmyadmin_port}:80/tcp
+  - ${wordpress_phpmyadmin_port}:80/tcp
   links:
   - mysql
 wordpress:
@@ -27,7 +27,7 @@ wordpress:
   log_opt: {}
   stdin_open: true
   ports:
-  - {$wordpress_port}:80/tcp
+  - ${wordpress_port}:80/tcp
   links:
   - mysql:mysql
   volumes:
