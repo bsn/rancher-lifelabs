@@ -11,6 +11,7 @@ db:
   environment:
     MYSQL_USER: wordpress
     MYSQL_PASSWORD: secretword
+    MYSQL_ROOT_PASSWORD: paSSw0rd
 phpmyadmin:
   image: phpmyadmin/phpmyadmin:latest
   log_driver: ''
