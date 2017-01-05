@@ -38,11 +38,11 @@ gitlab:
     GITLAB_HOST:newgitlab.lifelabs.xyz
     GITLAB_ROOT_PASSWORD:secret2005
     GITLAB_ROOT_EMAIL:eugene@lifeisgoodlabs.com
-    GITLAB_SECRETS_DB_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
-    GITLAB_SECRETS_SECRET_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
-    GITLAB_SECRETS_OTP_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    # GITLAB_SECRETS_DB_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    # GITLAB_SECRETS_SECRET_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    # GITLAB_SECRETS_OTP_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
   ports:
-  - ${gitlab_public_port}:80/tcp
+  - 4444:80/tcp
   links:
   - gitlab-postgresql:postgresql
   - gitlab-redis:redisio
