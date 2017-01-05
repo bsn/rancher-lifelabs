@@ -6,10 +6,6 @@
       type: "string"
       required: true
       label: "hostname for gitlab installation"
-    - variable: "gitlab_public_port"
-      type: "int"
-      label: "Public port to use"
-      required: true
     - variable: "gitlab_secrets_db_key_base"
       type: "password"
       required: true

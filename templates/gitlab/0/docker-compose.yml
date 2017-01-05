@@ -32,7 +32,7 @@ gitlab:
   log_opt: {}
   environment:
     GITLAB_HTTPS: '${gitlab_ssl_true}'
-    GITLAB_PORT: '${gitlab_public_port}'
+    GITLAB_PORT: 4444
     SMTP_USER: '${gitlab_smtp_user}'
     SMTP_PASS: '${gitlab_smtp_pass}'
     GITLAB_HOST: '${gitlab_host}'
@@ -42,7 +42,7 @@ gitlab:
     GITLAB_SECRETS_SECRET_KEY_BASE: '${gitlab_secrets_db_key_base}'
     GITLAB_SECRETS_OTP_KEY_BASE: '${gitlab_secrets_db_key_base}'
   ports:
-  - ${gitlab_public_port}:80/tcp
+  - 4444:80/tcp
   links:
   - gitlab-postgresql:postgresql
   - gitlab-redis:redisio
