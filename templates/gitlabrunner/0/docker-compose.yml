@@ -9,6 +9,8 @@ gitlab-runner:
   environment:
     CI_SERVER_URL: ${gitlab_runner_ci_url}
     RUNNER_EXECUTOR: docker
+    RUNNER_IMAGE: ubuntu:16.04
+    RUNNER_DOCKER_IMAGE: ubuntu:16.04 
     RUNNER_TOKEN: ${gitlab_runner_token}
     RUNNER_DESCRIPTION: ${gitlab_runner_name}
   volumes:
