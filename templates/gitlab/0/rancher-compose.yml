@@ -10,10 +10,6 @@
       type: "password"
       required: true
       label: "secret key for gitlab installation(please save it somewhere)"
-    - variable: "gitlab_ssl_true"
-      type: "boolean"
-      required: false
-      label: "Is gitlab use SSL"
     - variable: "gitlab_smtp_user"
       type: "string"
       required: true

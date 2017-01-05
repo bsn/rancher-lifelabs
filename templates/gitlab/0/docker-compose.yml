@@ -31,7 +31,7 @@ gitlab:
   tty: true
   log_opt: {}
   environment:
-    GITLAB_HTTPS: '${gitlab_ssl_true}'
+    GITLAB_HTTPS: false
     GITLAB_PORT: 4444
     SMTP_USER: '${gitlab_smtp_user}'
     SMTP_PASS: '${gitlab_smtp_pass}'
