@@ -17,7 +17,7 @@ phpmyadmin:
   links:
   - mysql
 wordpress:
-  image: wordpress:php7.0-fpm
+  image: wordpress:php7.0
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -25,6 +25,6 @@ wordpress:
   log_opt: {}
   stdin_open: true
   links:
-  - mysql:db
+  - mysql:mysql
   volumes:
   - wordpress_data:/usr/src/wordpress
