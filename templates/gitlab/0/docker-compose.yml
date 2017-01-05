@@ -31,18 +31,18 @@ gitlab:
   tty: true
   log_opt: {}
   environment:
-    GITLAB_HTTPS:false
-    GITLAB_PORT:'4444'
-    SMTP_USER:vasyl@lifeisgoodlabs.com
-    SMTP_PASS:secret2005
-    GITLAB_HOST:newgitlab.lifelabs.xyz
-    GITLAB_ROOT_PASSWORD:secret2005
-    GITLAB_ROOT_EMAIL:eugene@lifeisgoodlabs.com
-    # GITLAB_SECRETS_DB_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
-    # GITLAB_SECRETS_SECRET_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
-    # GITLAB_SECRETS_OTP_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    GITLAB_HTTPS: ${gitlab_ssl_true}
+    GITLAB_PORT: '${gitlab_public_port}'
+    SMTP_USER: ${gitlab_smtp_user}
+    SMTP_PASS: ${gitlab_smtp_pass}
+    GITLAB_HOST: ${gitlab_host}
+    GITLAB_ROOT_PASSWORD: ${gitlab_root_password}
+    GITLAB_ROOT_EMAIL: ${gitlab_root_email}
+    GITLAB_SECRETS_DB_KEY_BASE: ${gitlab_secrets_db_key_base}
+    GITLAB_SECRETS_SECRET_KEY_BASE: ${gitlab_secrets_db_key_base}
+    GITLAB_SECRETS_OTP_KEY_BASE: ${gitlab_secrets_db_key_base}
   ports:
-  - 4444:80/tcp
+  - ${gitlab_public_port}:80/tcp
   links:
   - gitlab-postgresql:postgresql
   - gitlab-redis:redisio
