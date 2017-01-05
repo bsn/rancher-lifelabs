@@ -5,22 +5,22 @@ gitlab-postgresql:
     POSTGRES_USER: gitlab
     POSTGRES_PASSWORD: password
     PGDATA: /data/postgres/data
+  image: postgres:9.5-alpine
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
   tty: true
   log_opt: {}
-  image: postgres:9.5-alpine
   stdin_open: true
   volumes:
   - gitlab_postgres_data:/data/postgres/data
 gitlab-redis:
+  image: redis:3.2.0-alpine
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
   tty: true
   log_opt: {}
-  image: redis:3.2.0-alpine
   stdin_open: true
 gitlab:
   image: sameersbn/gitlab:8.15.2
@@ -31,16 +31,16 @@ gitlab:
   tty: true
   log_opt: {}
   environment:
-    GITLAB_HTTPS:${gitlab_ssl_true}
-    GITLAB_PORT:${gitlab_public_port}
-    SMTP_USER:${gitlab_smtp_user}
-    SMTP_PASS:${gitlab_smtp_pass}
-    GITLAB_HOST:${gitlab_host}
-    GITLAB_ROOT_PASSWORD:${gitlab_root_password}
-    GITLAB_ROOT_EMAIL:${gitlab_root_email}
-    GITLAB_SECRETS_DB_KEY_BASE:${gitlab_secrets_db_key_base}
-    GITLAB_SECRETS_SECRET_KEY_BASE:${gitlab_secrets_db_key_base}
-    GITLAB_SECRETS_OTP_KEY_BASE:${gitlab_secrets_db_key_base}
+    GITLAB_HTTPS:false
+    GITLAB_PORT:'4444'
+    SMTP_USER:vasyl@lifeisgoodlabs.com
+    SMTP_PASS:secret2005
+    GITLAB_HOST:newgitlab.lifelabs.xyz
+    GITLAB_ROOT_PASSWORD:secret2005
+    GITLAB_ROOT_EMAIL:eugene@lifeisgoodlabs.com
+    GITLAB_SECRETS_DB_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    GITLAB_SECRETS_SECRET_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
+    GITLAB_SECRETS_OTP_KEY_BASE:LMg$J.G<aG_s1bSi$ki-;]jUB@[Fg{7@
   ports:
   - ${gitlab_public_port}:80/tcp
   links:
