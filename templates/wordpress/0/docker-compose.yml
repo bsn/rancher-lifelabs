@@ -1,4 +1,4 @@
-mysql:
+db:
   image: mysql/mysql-server:5.7
   volumes:
   - mysql_data:/var/lib/mysql
@@ -10,7 +10,7 @@ mysql:
   stdin_open: true
   environment:
     MYSQL_USER: wordpress
-    MYSQL_ROOT_PASSWORD: secretword
+    MYSQL_PASSWORD: secretword
 phpmyadmin:
   image: phpmyadmin/phpmyadmin:latest
   log_driver: ''
@@ -22,7 +22,7 @@ phpmyadmin:
   ports:
   - ${wordpress_phpmyadmin_port}:80/tcp
   links:
-  - mysql:db
+  - db:db
 wordpress:
   image: wordpress:php5.6
   log_driver: ''
@@ -37,6 +37,6 @@ wordpress:
   ports:
   - ${wordpress_port}:80/tcp
   links:
-  - mysql:mysql
+  - db:mysql
   volumes:
   - wordpress_data:/usr/src/wordpress
