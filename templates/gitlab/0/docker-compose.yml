@@ -32,7 +32,7 @@ gitlab:
   log_opt: {}
   environment:
     GITLAB_HTTPS: false
-    GITLAB_PORT: 4444
+    GITLAB_PORT: '4444'
     SMTP_USER: vasyl@lifeisgoodlabs.com
     SMTP_PASS: secret2005
     GITLAB_HOST: newgitlab.lifelabs.xyz
