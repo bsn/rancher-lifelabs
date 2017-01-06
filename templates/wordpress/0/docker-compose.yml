@@ -9,8 +9,6 @@ db:
   log_opt: {}
   stdin_open: true
   environment:
-    MYSQL_USER: wordpress
-    MYSQL_PASSWORD: secretword
     MYSQL_ROOT_PASSWORD: paSSw0rd
 phpmyadmin:
   image: phpmyadmin/phpmyadmin:latest
@@ -32,9 +30,6 @@ wordpress:
   tty: true
   log_opt: {}
   stdin_open: true
-  environment:
-    WORDPRESS_DB_USER: wordpress
-    WORDPRESS_DB_PASSWORD: secretword
   ports:
   - ${wordpress_port}:80/tcp
   links:
