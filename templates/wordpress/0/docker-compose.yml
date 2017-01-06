@@ -1,38 +1,22 @@
-db:
-  image: mysql/mysql-server:5.6
-  volumes:
-  - ${instance_label}_mysql_data:/var/lib/mysql
-  log_driver: ''
-  labels:
-    io.rancher.container.pull_image: always
-  tty: true
-  log_opt: {}
-  stdin_open: true
-  environment:
-    MYSQL_ROOT_PASSWORD: paSSw0rd
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin:latest
-  log_driver: ''
-  labels:
-    io.rancher.container.pull_image: always
-  tty: true
-  log_opt: {}
-  stdin_open: true
-  ports:
-  - ${wordpress_phpmyadmin_port}:80/tcp
-  links:
-  - db:db
-wordpress:
-  image: wordpress:php5.6
-  log_driver: ''
-  labels:
-    io.rancher.container.pull_image: always
-  tty: true
-  log_opt: {}
-  stdin_open: true
-  ports:
-  - ${wordpress_port}:80/tcp
-  links:
-  - db:mysql
-  volumes:
-  - ${instance_label}_wordpress_data:/usr/src/wordpress
+version: '2'
+services:
+  db:
+    image: mysql/mysql-server:5.6
+    volumes:
+    - ${instance_label}_mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: paSSw0rd
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+    - ${wordpress_phpmyadmin_port}:80/tcp
+    links:
+    - db:db
+  wordpress:
+    image: wordpress:php5.6
+    ports:
+    - ${wordpress_port}:80/tcp
+    links:
+    - db:mysql
+    volumes:
+    - ${instance_label}_wordpress_data:/usr/src/wordpress
