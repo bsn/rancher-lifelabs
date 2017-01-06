@@ -14,6 +14,8 @@ services:
     - db:db
   wordpress:
     image: wordpress:php5.6
+    environment:
+      WORDPRESS_DB_PASSWORD: paSSw0rd
     ports:
     - ${wordpress_port}:80/tcp
     links:
