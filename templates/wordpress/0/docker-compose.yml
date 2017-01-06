@@ -1,15 +1,5 @@
 version: '2'
 services:
-  wordpress:
-    image: wordpress:php5.6
-    environment:
-      WORDPRESS_DB_PASSWORD: paSSw0rd
-    ports:
-    - ${wordpress_port}:80/tcp
-    links:
-    - db:mysql
-    volumes:
-    - ${instance_label}_wordpress_data:/usr/src/wordpress
   db:
     image: mariadb
     volumes:
@@ -22,3 +12,13 @@ services:
     - ${wordpress_phpmyadmin_port}:80/tcp
     links:
     - db:db
+  wordpress:
+    image: wordpress:php5.6
+    environment:
+      WORDPRESS_DB_PASSWORD: paSSw0rd
+    ports:
+    - ${wordpress_port}:80/tcp
+    links:
+    - db:mysql
+    volumes:
+    - ${instance_label}_wordpress_data:/usr/src/wordpress
