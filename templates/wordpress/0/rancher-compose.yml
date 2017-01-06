@@ -4,6 +4,10 @@
   description: installs wordpress with mysql and phpmyadmin # Description of the versioned template of the Catalog Entry
   minimum_rancher_version: 1.2.0
   questions:
+    - variable "instance_label"
+      type: "string"
+      required: true
+      label: "label the instance volume perefixes"
     - variable: "wordpress_port"
       type: "int"
       required: true
