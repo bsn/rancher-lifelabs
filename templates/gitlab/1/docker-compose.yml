@@ -22,7 +22,7 @@ gitlab-redis:
   log_opt: {}
   stdin_open: true
 gitlab:
-  image: sameersbn/gitlab:8.16.1-ce.0
+  image: sameersbn/gitlab:8.15.4
   stdin_open: true
   log_driver: ''
   labels:

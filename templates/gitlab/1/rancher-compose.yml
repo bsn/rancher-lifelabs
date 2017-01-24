@@ -1,6 +1,6 @@
 .catalog:
   name: Gitlab
-  version: 8.16.1-ce.0
+  version: 8.15.4
   questions: #Used to request user input for configuration options
     # - variable: "gitlab_host"
     #   type: "string"
