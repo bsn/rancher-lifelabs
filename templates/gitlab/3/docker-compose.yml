@@ -41,6 +41,7 @@ gitlab:
     GITLAB_SECRETS_OTP_KEY_BASE: eodA|/L%k=iq]g,A
   ports:
   - 4444:80/tcp
+  - 2222:2222/tcp
   links:
   - gitlab-postgresql:postgresql
   - gitlab-redis:redisio
