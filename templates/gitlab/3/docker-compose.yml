@@ -32,7 +32,7 @@ gitlab:
   environment:
     SMTP_USER: vasyl@lifeisgoodlabs.com
     SMTP_PASS: secret2005
-    GITLAB_HOST: newgitlab.lifelabs.xyz
+    GITLAB_HOST: gitlab.lifelabs.xyz
     GITLAB_ROOT_PASSWORD: secret2005
     GITLAB_ROOT_EMAIL: eugene@lifeisgoodlabs.com
     GITLAB_SSH_PORT: 2222
