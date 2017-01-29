@@ -1,6 +1,6 @@
 .catalog:
   name: Gitlab
-  version: 8.16.0-sshport
+  version: 8.16.1
   questions: #Used to request user input for configuration options
     # - variable: "gitlab_host"
     #   type: "string"
