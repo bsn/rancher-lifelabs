@@ -1,6 +1,6 @@
 name: Gitlab
 description: |
   github replacement
-version: 8.16.0
+version: 8.16.0-sshport
 category: git
 projectURL: http://gitlab.com
