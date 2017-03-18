@@ -21,4 +21,4 @@ services:
     links:
     - db:mysql
     volumes:
-    - ${instance_label}_wordpress_data:/usr/src/wordpress
+    - ${instance_label}_wordpress_data:/var/www
