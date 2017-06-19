@@ -1,0 +1,49 @@
+gitlab-postgresql:
+  environment:
+    POSTGRES_DB: gitlabhq_production
+    POSTGRES_USER: gitlab
+    POSTGRES_PASSWORD: password
+    PGDATA: /data/postgres/data
+  image: postgres:9.5-alpine
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  log_opt: {}
+  stdin_open: true
+  volumes:
+  - gitlab_postgres_data:/data/postgres/data
+gitlab-redis:
+  image: redis:3.2.0-alpine
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  log_opt: {}
+  stdin_open: true
+gitlab:
+  image: sameersbn/gitlab:9.2.5
+  stdin_open: true
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  log_opt: {}
+  environment:
+    SMTP_USER: vasyl@lifeisgoodlabs.com
+    SMTP_PASS: secret2005
+    GITLAB_HOST: gitlab.lifelabs.xyz
+    GITLAB_ROOT_PASSWORD: secret2005
+    GITLAB_ROOT_EMAIL: eugene@lifeisgoodlabs.com
+    GITLAB_SSH_PORT: 2222
+    GITLAB_SECRETS_DB_KEY_BASE: eodA|/L%k=iq]g,A
+    GITLAB_SECRETS_SECRET_KEY_BASE: eodA|/L%k=iq]g,A
+    GITLAB_SECRETS_OTP_KEY_BASE: eodA|/L%k=iq]g,A
+  ports:
+  - 4444:80/tcp
+  - 2222:22/tcp
+  links:
+  - gitlab-postgresql:postgresql
+  - gitlab-redis:redisio
+  volumes:
+  - gitlab_data:/home/git/data

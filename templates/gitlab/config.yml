@@ -1,6 +1,6 @@
 name: Gitlab
 description: |
   github replacement
-version: 8.16.1
+version: 9.2.5
 category: git
 projectURL: http://gitlab.com
