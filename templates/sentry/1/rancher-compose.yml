@@ -1,6 +1,6 @@
 .catalog:
   name: sentry
-  version: 8.12.0
+  version: 8.21.0
   description: Sentry is a realtime event logging and aggregation platform
   questions:
     - variable: "sentry_secret_key"
