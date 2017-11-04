@@ -20,7 +20,7 @@ services:
       - FF_APP_KEY=SomeRandomStringOf32CharsExactly
       - FF_APP_ENV=local
     ports:
-      - "9001:80"
+      - - ${firefly_port}:80/tcp
     links:
       - firefly-db
     volumes:

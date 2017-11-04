@@ -1,6 +1,6 @@
 .catalog:
   name: Initial version # Name of the versioned template of the Catalog Entry
-  version: 0.1 # Version of the versioned template of the Catalog Entry
+  version: 0.2 # Version of the versioned template of the Catalog Entry
   description: Firefly # Description of the versioned template of the Catalog Entry
   minimum_rancher_version: 1.2.0
   questions:
