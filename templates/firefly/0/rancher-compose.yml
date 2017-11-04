@@ -1,0 +1,14 @@
+.catalog:
+  name: Initial version # Name of the versioned template of the Catalog Entry
+  version: 0.1 # Version of the versioned template of the Catalog Entry
+  description: Firefly # Description of the versioned template of the Catalog Entry
+  minimum_rancher_version: 1.2.0
+  questions:
+    - variable: "instance_label"
+      type: "string"
+      required: true
+      label: "label the instance volume perefixes"
+    - variable: "firefly_port"
+      type: "int"
+      required: true
+      label: "Firefly public port"
